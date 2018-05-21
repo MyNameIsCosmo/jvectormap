@@ -1101,7 +1101,6 @@ jvm.Map.prototype = {
 jvm.Map.maps = {};
 jvm.Map.defaultParams = {
   map: 'world_mill_en',
-  backgroundColor: '#505050',
   zoomButtons: true,
   zoomOnScroll: true,
   zoomOnScrollSpeed: 3,

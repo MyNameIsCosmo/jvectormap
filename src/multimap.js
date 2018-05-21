@@ -29,7 +29,12 @@ jvm.MultiMap = function(params) {
   this.params.main = this.params.main || {};
   this.params.main.multiMapLevel = 0;
   this.history = [ this.addMap(this.params.main.map, this.params.main) ];
-  this.defaultProjection = this.history[0].mapData.projection.type;
+  console.log(this);
+  if (this.history[0].mapData.projection != null) {
+    this.defaultProjection = this.history[0].mapData.projection.type;
+  } else {
+    this.defaultProjection = null;
+  };
   this.mapsLoaded = {};
 
   this.params.container.css({position: 'relative'});
@@ -69,6 +74,7 @@ jvm.MultiMap.prototype = {
   },
 
   downloadMap: function(code){
+    console.log(code)
     var that = this,
         deferred = jvm.$.Deferred();
 
